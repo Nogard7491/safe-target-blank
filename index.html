@@ -16,6 +16,10 @@
     <p>
         Наблюдайте за окном, с которого был осуществлён переход!
     </p>
-    <script>window.opener.location = 'fake.html';</script>
+    <script>
+        if (window.opener && window.opener.location) {
+            window.opener.location = 'fake.html';
+        }
+    </script>
 </body>
 </html>

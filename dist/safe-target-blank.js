@@ -1,27 +1,16 @@
 ;(function () {
 
     /**
-     * Устанавливает обработчик события.
-     *
-     * @param event событие
-     * @param element элемент
-     * @param handler обработчик события
-     */
-    function addEvent(event, element, handler) {
-        if (element.addEventListener) {
-            element.addEventListener('click', openSafeWindow, false)
-        } else {
-            element.attachEvent('on' + event, openSafeWindow);
-        }
-    }
-
-    /**
-     * Устанавливает обработчик события загрузки документа.
+     * Обработчик события загрузки документа.
      *
      * @param e событие
      */
     function onDocumentReady(e) {
-        addEvent('click', document.body, openSafeWindow);
+        if (document.body.addEventListener) {
+            document.body.addEventListener('click', openSafeWindow, false)
+        } else {
+            document.body.attachEvent('onclick', openSafeWindow);
+        }
     }
 
     /**
@@ -65,5 +54,9 @@
         }
     }
 
-    addEvent('load', document, onDocumentReady);
+    if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', onDocumentReady , false);
+    } else {
+        document.attachEvent('onreadystatechange', onDocumentReady);
+    }
 })();
