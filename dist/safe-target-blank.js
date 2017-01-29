@@ -6,10 +6,10 @@
      * @param e событие
      */
     function onDocumentReady(e) {
-        if (document.body.addEventListener) {
-            document.body.addEventListener('click', openSafeWindow, false)
+        if (window.document.body.addEventListener) {
+            window.document.body.addEventListener('click', openSafeWindow, false)
         } else {
-            document.body.attachEvent('onclick', openSafeWindow);
+            window.document.body.attachEvent('onclick', openSafeWindow);
         }
     }
 
@@ -26,7 +26,7 @@
             safeWindow;
 
         node = e.target || e.srcElement;
-        while (node != null && node !== document.body) {
+        while (node != null && node !== window.document.body) {
 
             bool = (
                 node.tagName != null &&
@@ -54,9 +54,9 @@
         }
     }
 
-    if (document.addEventListener) {
-        document.addEventListener('DOMContentLoaded', onDocumentReady , false);
+    if (window.document.addEventListener) {
+        window.document.addEventListener('DOMContentLoaded', onDocumentReady , false);
     } else {
-        document.attachEvent('onreadystatechange', onDocumentReady);
+        window.document.attachEvent('onreadystatechange', onDocumentReady);
     }
 })();
