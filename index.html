@@ -2,16 +2,19 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Example</title>
+    <title>Пример</title>
     <meta name="keywords" content="safe, target, blank, attribute, link, external">
-    <meta name="description" content="Safe target='_blank' attribute for a link.">
+    <meta name="description" content="Безопасное открытие нового окна при клике на ссылку.">
     <script src="dist/safe-target-blank.js"></script>
 </head>
 <body>
     <p>
-        <a href="index.html" target="_blank">The dangerous link</a>
+        <a href="index.html" target="_blank">Опасная ссылка</a>
         <br>
-        <a href="index.html" data-target="_blank">The secure link</a>
+        <a href="index.html" data-target="_blank">Безопасная ссылка</a>
+    </p>
+    <p>
+        Наблюдайте за окном, с которого был осуществлён переход!
     </p>
     <script>window.opener.location = 'fake.html';</script>
 </body>

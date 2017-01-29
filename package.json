@@ -9,7 +9,7 @@
     "link",
     "external"
   ],
-  "description": "Safe target='_blank' attribute for a link.",
+  "description": "Безопасное открытие нового окна при клике на ссылку.",
   "main": "dist/safe-target-blank.js",
   "homepage": "http://nogard.ru",
   "author": "Nogard7491",

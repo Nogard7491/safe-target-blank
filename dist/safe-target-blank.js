@@ -1,14 +1,11 @@
-/**
- * Opens external links in a new "safe" window.
- */
 ;(function () {
 
     /**
-     * Attach an event handler.
+     * Устанавливает обработчик события.
      *
-     * @param event Event
-     * @param element Element
-     * @param handler Handler
+     * @param event событие
+     * @param element элемент
+     * @param handler обработчик события
      */
     function addEvent(event, element, handler) {
         if (element.addEventListener) {
@@ -19,18 +16,19 @@
     }
 
     /**
-     * Attach the document onload event.
+     * Устанавливает обработчик события загрузки документа.
      *
-     * @param e Event
+     * @param e событие
      */
     function onDocumentReady(e) {
         addEvent('click', document.body, openSafeWindow);
     }
 
     /**
-     * Open "safe" window if target is a link with data-target attribute.
+     * Открывает новое и безопасное окно при клике на ссылку с data-target атрибутом.
+     * Значение атрибута должно быть "_blank".
      *
-     * @param e Event
+     * @param e событие
      */
     function openSafeWindow(e) {
 
